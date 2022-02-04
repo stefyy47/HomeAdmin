@@ -1,0 +1,8 @@
+type Status {
+  id: Int
+  name: String
+}
+
+extend type Query {
+  statusList: [Status!]
+}

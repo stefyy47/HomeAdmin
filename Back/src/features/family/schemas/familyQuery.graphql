@@ -1,0 +1,22 @@
+type Family {
+  id: ID
+  familyCode: String
+  familyIncome: Float
+}
+
+type FamilyMember {
+  id: ID
+  familyId: Int
+  houseId: Int
+  firstName: String
+  lastName: String
+  name: String
+  age: Int
+  phoneNumber: String
+  emailAddress: String
+}
+
+extend type Query {
+  familyData(familyCode: String!): Family
+  familyMember(userName: String!): FamilyMember
+}

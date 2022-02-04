@@ -1,0 +1,15 @@
+type FamilyMember {
+  id: ID
+  firstName: String
+  lastName: String
+  name: String
+}
+
+extend type Query {
+  familyMembers: [FamilyMember!]
+  isFamilyCreator: Boolean
+}
+
+extend type Mutation {
+  removeMember(id: Int!): Int
+}

@@ -1,0 +1,32 @@
+type Task {
+  id: ID!
+  status: Status
+  familyMember: FamilyMember
+  createdAt: DateTime
+  deadline: DateTime
+  description: String
+  title: String
+}
+
+input TaskListFilters {
+  familyId: Int!
+  statusId: Int
+  createdFrom: DateTime
+  createdUntil: DateTime
+}
+
+input TaskInput {
+  taskName: String
+  asigneeId: String
+  statusId: Int
+  taskDescription: String
+  isKidFriendly: Boolean
+  isElderFriendly: Boolean
+}
+
+extend type Query {
+  taskList: [Task!]
+}
+extend type Mutation {
+  addTask(input: TaskInput!): Int
+}

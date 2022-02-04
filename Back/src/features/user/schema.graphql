@@ -1,0 +1,45 @@
+input UserInputType {
+  id: Int!
+  firstName: String
+  lastName: String
+}
+
+type User {
+  id: ID!
+  userName: String
+  firstName: String
+  lastName: String
+  rights: [String!]
+}
+
+input UserCreateInputType {
+  userName: String!
+  email: String
+  password: String!
+  firstName: String!
+  lastName: String!
+  age: Int!
+}
+
+input UserFilterInput {
+  firstName: String
+  lastName: String
+}
+
+type UserList {
+  values: [User!]!
+  pagination(pager: PagerInput!, filters: UserFilterInput): Pagination
+}
+
+extend type Query {
+  userData(id: ID, externalId: ID): User
+  userList(pager: PagerInput!, filters: UserFilterInput): UserList!
+}
+
+extend type Mutation {
+  createUser(input: UserCreateInputType!): Boolean
+}
+
+extend type Subscription {
+  userChanged: Boolean
+}

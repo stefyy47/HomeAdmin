@@ -1,0 +1,14 @@
+type FamilyHouse {
+  id: Int
+  address: String
+  isPopulated: Boolean
+}
+
+extend type Query {
+  familyHouses: [FamilyHouse!]
+}
+
+extend type Mutation {
+  removeFamilyHouse(id: Int!): Int
+  addFamilyHouse(address: String!): Int
+}

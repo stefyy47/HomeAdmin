@@ -1,0 +1,29 @@
+type Family {
+  id: ID
+  familyCode: String
+  familyIncome: Float
+}
+
+input FamilyMemberInput {
+  houseId: Int
+  familyCode: String
+  userName: String!
+  password: String!
+  firstName: String!
+  lastName: String!
+  age: Int!
+  phoneNumber: String
+  emailAddress: String
+}
+
+input HouseHold {
+  address: String
+  isPopulated: Boolean
+  houseHoldIncome: Float
+}
+
+extend type Mutation {
+  login(userName: String!, password: String!): String!
+  register(input: FamilyMemberInput!): String!
+  createFamily: Family!
+}
