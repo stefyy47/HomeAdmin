@@ -1,0 +1,125 @@
+{
+  "name": "HomeAdministrator",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">= 7.16.0"
+  },
+  "description": "•\tVisual Studio Code: https://code.visualstudio.com/download<br> •\tGit: https://git-scm.com/download/win <br> •\tGit Extensions: https://github.com/gitextensions/gitextensions/releases <br> •\tNode.js: https://nodejs.org/en/download/",
+  "main": "config-overrides.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "test:ci": "cross-env CI=true npm test -- --reporters=default --reporters=jest-junit --coverage --coverageReporters=cobertura --coverageReporters=lcov --coverageReporters=html",
+    "eject": "react-scripts eject",
+    "eslint:report": "eslint --fix --ext .js .",
+    "prettier": "prettier --write **/*.js",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@axa-fr/react-oidc-context": "^3.1.7",
+    "@bit/totalsoft_oss.react-mui.kit.core": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.styles": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.themes.blue-theme": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.themes.default-theme": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.themes.green-theme": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.themes.light-blue-theme": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.themes.orange-theme": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.themes.red-theme": "^2.9.55",
+    "@bit/totalsoft_oss.react-mui.themes.vivid-orange-theme": "^2.9.55",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "@totalsoft/change-tracking-react": "^5.0.22",
+    "@totalsoft/pure-validations-react": "^5.0.22",
+    "@totalsoft/rules-algebra-react": "^5.0.22",
+    "@totalsoft/validations": "^1.0.4",
+    "apollo-link-mock": "^1.0.1",
+    "apollo-upload-client": "^17.0.0",
+    "classnames": "^2.3.1",
+    "file-saver": "^2.0.5",
+    "graphql": "^16.2.0",
+    "i18next": "^21.6.4",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-http-backend": "^1.3.1",
+    "lodash.curry": "^4.1.1",
+    "moment": "2.29.1",
+    "oidc-client": "^1.11.5",
+    "omit-deep-lodash": "^1.1.5",
+    "ramda": "^0.27.1",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-flags": "^0.1.18",
+    "react-i18next": "^11.15.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.0",
+    "react-super-responsive-table": "^5.2.0",
+    "simplebar-react": "^2.3.6",
+    "subscriptions-transport-ws": "^0.11.0",
+    "url-search-params-polyfill": "^8.1.1",
+    "uuidv4": "^6.2.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/plugin-proposal-pipeline-operator": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "cross-env": "^7.0.3",
+    "customize-cra": "^1.0.0",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "jest-junit": "^13.0.0",
+    "mini-css-extract-plugin": "2.4.5",
+    "prettier": "^2.5.1",
+    "react-app-rewired": "^2.1.11",
+    "react-error-overlay": "6.0.9"
+  },
+  "lint-staged": {
+    "**/*.+(js|md|css|graphql|json)": "prettier --write"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-pipeline-operator",
+        {
+          "proposal": "minimal"
+        }
+      ]
+    ]
+  }
+}
